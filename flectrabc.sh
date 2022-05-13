@@ -13,7 +13,7 @@ if [ ! -d $bcdir ]; then
 fi
 
 echo "Backing up DB: $FL_DB   Date:$DATE"
-FORM="-F master_pwd={PWD} -F name=${DB} -F backup_format=${BK_FORMAT}"
+FORM="-F master_pwd=${PWD} -F name=${DB} -F backup_format=${BK_FORMAT}"
 
 curl -s -X POST ${FORM} -o $bcdir/$DB-$DATE.$BK_FORMAT $URL
 
